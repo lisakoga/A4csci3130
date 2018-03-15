@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "316915040333",
+    "firebase_url": "https://seafoodmarket-csci3130a3.firebaseio.com",
+    "project_id": "seafoodmarket-csci3130a3",
+    "storage_bucket": "seafoodmarket-csci3130a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316915040333:android:6409f2945731fca6",
+        "android_client_info": {
+          "package_name": "com.acme.a3csci3130"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316915040333-eof033goiftule2vhhj16jhvnt2i10af.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCggSNl1t-suvYBNAV6iznqp_OS67tBKo4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
