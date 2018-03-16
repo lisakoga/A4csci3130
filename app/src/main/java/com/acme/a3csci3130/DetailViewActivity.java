@@ -31,7 +31,8 @@ public class DetailViewActivity extends Activity
         addressField = (EditText) findViewById(R.id.address);
         provinceField = (EditText) findViewById(R.id.province);
 
-        if(receivedPersonInfo != null){
+        if(receivedPersonInfo != null)
+        {
             nameField.setText(receivedPersonInfo.name);
             numberField.setText(receivedPersonInfo.number);
             businessField.setText(receivedPersonInfo.business);
@@ -49,8 +50,8 @@ public class DetailViewActivity extends Activity
         String province = provinceField.getText().toString();
 
         // updates the firebase
-        Contact updated = new Contact(receivedPersonInfo.uid, name, number, business, address, province);
-        appState.firebaseReference.child(receivedPersonInfo.uid).setValue(updated);
+        Contact updated = new Contact(receivedPersonInfo.id, name, number, business, address, province);
+        appState.firebaseReference.child(receivedPersonInfo.id).setValue(updated);
         finish();
 
     }
@@ -58,7 +59,7 @@ public class DetailViewActivity extends Activity
     public void eraseContact(View v)
     {
         // erase the contact from the firebase
-        appState.firebaseReference.child(receivedPersonInfo.uid).removeValue();
+        appState.firebaseReference.child(receivedPersonInfo.id).removeValue();
         finish();
     }
 }

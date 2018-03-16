@@ -12,9 +12,10 @@ import java.util.Map;
  * Firebase databse. This is converted to a JSON format
  */
 
-public class Contact implements Serializable {
+public class Contact implements Serializable
+{
 
-    public  String uid;
+    public  String id;
     public  String name;
     public  String number;
     public  String business;
@@ -27,9 +28,17 @@ public class Contact implements Serializable {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Contact(String personID, String name, String number, String business, String address, String province)
+    /**
+     * @param id unique user id
+     * @param name name
+     * @param number business number
+     * @param business business area / job type
+     * @param address address
+     * @param province province or territory
+     */
+    public Contact(String id, String name, String number, String business, String address, String province)
     {
-        this.uid = uid;
+        this.id = id;
         this.name = name;
         this.number = number;
         this.business = business;
@@ -38,9 +47,10 @@ public class Contact implements Serializable {
     }
 
     @Exclude
-    public Map<String, Object> toMap(){
+    public Map<String, Object> toMap()
+    {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("uid", uid);
+        result.put("id", id);
         result.put("name", name);
         result.put("number", number);
         result.put("business", business);
