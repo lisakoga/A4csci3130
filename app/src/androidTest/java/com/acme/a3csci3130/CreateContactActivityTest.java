@@ -3,9 +3,6 @@ package com.acme.a3csci3130;
 /**
  * Created by lisa on 2018-03-15.
  */
-
-import android.os.SystemClock;
-
 import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.espresso.intent.rule.IntentsTestRule;
@@ -27,7 +24,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 
-public class EspressoTest
+public class CreateContactActivityTest
 {
     @Rule
     public IntentsTestRule<CreateContactAcitivity> intentsTestRule = new IntentsTestRule<>(CreateContactAcitivity.class);
@@ -38,10 +35,8 @@ public class EspressoTest
     @Test
     public void addContact()
     {
-        SystemClock.sleep(1000);
         onView(withId(R.id.submitButton)).perform(click());
         intended(hasComponent(CreateContactAcitivity.class.getName()));
-
         onView(withId(R.id.name)).perform(typeText("John Smith"));
         onView(withId(R.id.number)).perform(typeText("999999999"));
         onView(withId(R.id.business)).perform(typeText("Fisher"));
@@ -50,36 +45,4 @@ public class EspressoTest
         closeSoftKeyboard();
         onView(withId(R.id.submitButton)).perform(click());
     }
-
-    /**
-     *  Test for updating a contact
-     */
-    @Test
-    public void updateContact()
-    {
-        onView(withId(R.id.updateButton)).perform(click());
-        intended(hasComponent(DetailViewActivity.class.getName()));
-    }
-
-    /**
-     *  Test for deleting a contact
-     */
-    @Test
-    public void deleteContact()
-    {
-        onView(withId(R.id.deleteButton)).perform(click());
-        intended(hasComponent(DetailViewActivity.class.getName()));
-    }
-
-    /**
-     *  Test for clicking "CREATE CONTACT" button on the main page
-     */
-    @Test
-    public void pressButton()
-    {
-        SystemClock.sleep(5000);
-        onView(withId(R.id.submitButton)).perform(click());
-        intended(hasComponent(MainActivity.class.getName()));
-    }
 }
-
